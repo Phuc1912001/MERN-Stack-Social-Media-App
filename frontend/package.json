@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.5",
     "@iconscout/react-unicons": "^1.1.6",
     "@mantine/core": "^5.6.3",
     "@mantine/hooks": "^5.6.3",
