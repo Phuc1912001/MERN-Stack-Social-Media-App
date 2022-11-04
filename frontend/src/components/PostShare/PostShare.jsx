@@ -52,6 +52,7 @@ const PostShare = () => {
               name="myImage"
               ref={imageRef}
               onChange={onImageChange}
+              
             />
           </div>
         </div>
