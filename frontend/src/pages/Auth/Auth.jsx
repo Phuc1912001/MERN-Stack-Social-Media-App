@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Auth.css";
 import Logo from "../../img/logo.png";
-import { logIn, signUp } from "../../actions/AuthActions.js";
+import { logIn, signUp } from "../../actions/AuthAction";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
