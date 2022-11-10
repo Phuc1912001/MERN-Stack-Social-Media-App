@@ -7,7 +7,6 @@ import { UilSchedule } from "@iconscout/react-unicons";
 import { UilTimes } from "@iconscout/react-unicons";
 import { useDispatch, useSelector } from "react-redux";
 import { uploadImage, uploadPost } from "../../actions/UploadAction";
-import Cover from '../../img/profilePicture.jpg'
 
 const PostShare = () => {
   const dispatch = useDispatch();
@@ -15,7 +14,7 @@ const PostShare = () => {
   const loading = useSelector((state) => state.postReducer.uploading);
   const [image, setImage] = useState(null);
   const desc = useRef();
-  
+  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 
   // handle Image Change
   const onImageChange = (event) => {
@@ -62,7 +61,14 @@ const PostShare = () => {
   };
   return (
     <div className="PostShare">
-      <img src={Cover} alt="Profile" />
+      <img
+        src={
+          user.profilePicture
+            ? serverPublic + user.profilePicture
+            : serverPublic + "defaultProfile.png"
+        }
+        alt="Profile"
+      />
       <div>
         <input
           type="text"
