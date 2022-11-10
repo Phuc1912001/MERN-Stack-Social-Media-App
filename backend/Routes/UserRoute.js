@@ -8,7 +8,6 @@ import {
   updateUser,
 } from "../controllers/UserController.js";
 
-
 const router = express.Router();
 
 router.get("/:id", getUser);

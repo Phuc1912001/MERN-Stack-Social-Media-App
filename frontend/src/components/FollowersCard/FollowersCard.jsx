@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./FollowersCard.css";
 import FollowersModal from "../FollowersModal/FollowersModal";
-import { getAllUser } from "../../api/UserRequests";
+import { getAllUser } from "../../api/UserRequest";
 import User from "../User/User";
 import { useSelector } from "react-redux";
 const FollowersCard = ({ location }) => {
