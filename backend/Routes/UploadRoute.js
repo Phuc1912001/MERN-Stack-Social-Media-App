@@ -4,6 +4,7 @@ import multer from "multer";
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
+    // lưu vào foder public/images
     cb(null, "public/images");
   },
   filename: (req, file, cb) => {

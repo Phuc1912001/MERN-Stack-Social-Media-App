@@ -38,7 +38,9 @@ const PostShare = () => {
 
     // if there is an image with post
     if (image) {
+      // tạo một form data mới 
       const data = new FormData();
+      //đặt tên file ảnh muốn post 
       const fileName = Date.now() + image.name;
       data.append("name", fileName);
       data.append("file", image);
@@ -113,6 +115,7 @@ const PostShare = () => {
 
         {image && (
           <div className="previewImage">
+            {/* x ảnh muống post  */}
             <UilTimes onClick={() => setImage(null)} />
             <img src={URL.createObjectURL(image)} alt="preview" />
           </div>

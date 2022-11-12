@@ -11,10 +11,11 @@ const authReducer = (
     case "AUTH_START":
       return { ...state, loading: true, error: false };
     case "AUTH_SUCCESS":
+      // dòng 15 lưu vào localStorange và ...action?data nghĩa là  kiểm tra xem action này có tồn tại không sau đó mới duyệt đến data
       localStorage.setItem("profile", JSON.stringify({ ...action?.data }));
-
+      //dong 17 return ra state hiện tại , 
       return { ...state, authData: action.data, loading: false, error: false };
-
+      
     case "AUTH_FAIL":
       return { ...state, loading: false, error: true };
     case "UPDATING_START":

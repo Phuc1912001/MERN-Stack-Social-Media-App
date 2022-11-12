@@ -16,6 +16,7 @@ const InfoCard = () => {
   const { user } = useSelector((state) => state.authReducer.authData);
 
   const handleLogOut = () => {
+    
     dispatch(logout());
   };
 

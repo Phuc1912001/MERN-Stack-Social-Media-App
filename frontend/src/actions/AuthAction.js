@@ -14,7 +14,9 @@ export const logIn = (formData, navigate) => async (dispatch) => {
 export const signUp = (formData, navigate) => async (dispatch) => {
   dispatch({ type: "AUTH_START" });
   try {
+    // dòng 17 đăng ký tài khoản với phương thức là post 
     const { data } = await AuthApi.signUp(formData);
+    // dòng 20 dispatch với type là " AUTH_SUCCESS"
     dispatch({ type: "AUTH_SUCCESS", data: data });
     navigate("../home", { replace: true });
   } catch (error) {
