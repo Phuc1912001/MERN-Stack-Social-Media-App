@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 
-
 import "./ChatBox.css";
 import { format } from "timeago.js";
 import InputEmoji from "react-input-emoji";
@@ -120,9 +119,10 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
             </div>
             {/* chat-body */}
             <div className="chat-body">
-              {messages.map((message) => (
+              {messages.map((message, index) => (
                 <>
                   <div
+                    key={index}
                     ref={scroll}
                     className={
                       message.senderId === currentUser

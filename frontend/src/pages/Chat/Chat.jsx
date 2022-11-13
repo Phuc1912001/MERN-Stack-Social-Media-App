@@ -1,15 +1,13 @@
 import React, { useRef, useState } from "react";
 import ChatBox from "../../components/ChatBox/ChatBox";
-
+import Conversation from "../../components/Conversation/Conversation";
 import LogoSearch from "../../components/LogoSearch/LogoSearch";
-//import NavIcons from "../../components/NavIcons/NavIcons";
+import NavIcons from "../../components/NavIcons/NavIcons";
 import "./Chat.css";
 import { useEffect } from "react";
-
+import { userChats } from "../../api/ChatRequest";
 import { useDispatch, useSelector } from "react-redux";
 import { io } from "socket.io-client";
-import Conversation from "../../components/Conversation/Conversation";
-import { userChats } from "../../api/ChatRequest";
 
 const Chat = () => {
   const dispatch = useDispatch();
@@ -72,8 +70,9 @@ const Chat = () => {
         <div className="Chat-container">
           <h2>Chats</h2>
           <div className="Chat-list">
-            {chats.map((chat) => (
+            {chats.map((chat, index) => (
               <div
+                key={index}
                 onClick={() => {
                   setCurrentChat(chat);
                 }}
@@ -93,7 +92,7 @@ const Chat = () => {
 
       <div className="Right-side-chat">
         <div style={{ width: "20rem", alignSelf: "flex-end" }}>
-          {/* <NavIcons /> */}
+          <NavIcons />
         </div>
         <ChatBox
           chat={currentChat}
